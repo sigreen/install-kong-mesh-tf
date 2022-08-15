@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: counter-gui
+spec:
+  ingressClassName: kong
+  rules:
+  - host: <external-address>.nip.io
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: demo-app
+            port:
+              number: 5000
