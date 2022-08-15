@@ -45,7 +45,7 @@ az aks get-credentials --resource-group $(terraform output -raw resource_group_n
 kubectl get all
 ```
 
-### NLB Post install:
+### Post install testing:
 
 1. Check services:
 
